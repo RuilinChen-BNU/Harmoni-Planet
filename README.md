@@ -3,7 +3,7 @@ A Practical Harmonization Method for PlanetScope Constellation Imagery Leveragin
 
 🌟 Features
 
-	1. End-to-end support for PlanetScope strip imagery harmonization in a holistic, scalable, and self-contained manner.
+	1. End-to-end support for PlanetScope strip imagery harmonization in a holistic, scalable and self-contained manner.
 	2. Option to output only the optimized harmonization coefficients.
 	3. Supports storing and importing of graph structures. 
 
