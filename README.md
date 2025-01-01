@@ -86,10 +86,16 @@ A Holistic and Scalable Harmonization Method for PlanetScope Constellation Image
 	                         2. Configure output file paths accordingly.
 
 	Visual evaluation:
-	To evaluate the algorithm's performance on the test dataset, apply the following PlanetScope strip imagery and ensure consistent stretching methods for visualization:
-	3. Harmonized images for the dataset, delivered as output files.
-		
-		Visual evaluation:
-		To evaluate the algorithm's performance on the test dataset, apply the following PlanetScope strip imagery and ensure consistent stretching methods for visualization.
+	To visually evaluate the algorithm's performance on the test dataset, apply the following PlanetScope strip imagery with identical stretching methods:
+  	202306276606884.tif | 202306276606795.tif | 202306276606742.tif | 202306276606997.tif | 202306276606764.tif
+	202306296611713.tif | 202306296611316.tif | 202306296611662.tif | 202306296611282.tif | 202306296611929.tif
+	These images were acquired over a two-day period and exhibit significant radiometric inconsistencies between strips, making them suitable for visualizing the algorithm's performance.
 
-  
+
+📜 License
+
+	This project is released under the MIT license. See the LICENSE file for details.
+ 
+🙌 Acknowledgements
+
+	Created by Ruilin Chen. Looking forward to your feedback and suggestions! If you have any questions or encounter issues, please feel free to submit an Issue.
