@@ -15,7 +15,7 @@ A Practical Harmonization Method for PlanetScope Constellation Imagery Leveragin
 
 📂 Data Preparation
 
-	1. Log in to the Planet data ordering platform and select the desired imagery by clicking “Order Scenes”.
+	1. Log in to the Planet data ordering platform (i.e., Planet Explorer) and select the desired imagery by clicking “Order Scenes”.
 	2. Under Delivery options, choose “Direct download” and select “GeoTIFF or TIFF + RPC”.
 	3. Assign a name to your order.
 	4. Under Select assets, choose “Surface reflectance” for either 4-band or 8-band imagery.
