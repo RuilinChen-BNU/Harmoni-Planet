@@ -1,12 +1,12 @@
 # Harmoni-Planet
-A Practical Harmonization Method for PlanetScope Constellation Imagery Leveraging a Graph-based Greedy Optimization Strategy
+Harmoni-Planet: A Holistic Harmonization Method for PlanetScope Constellation Imagery Leveraging a Graph-Based Greedy Optimization Strategy
 
 🌟 Features
 
 	1. End-to-end support for PlanetScope imagery harmonization in a holistic, scalable and self-contained manner.
 	2. Option to output only the optimized harmonization coefficients.
 	3. Supports storing and importing of graph structures. 
-	3. Supports both the strip-based and scene-based implementations. 
+	4. Supports both the strip-based and scene-based implementations. 
  
 📋 Prerequisites
 
@@ -21,15 +21,15 @@ A Practical Harmonization Method for PlanetScope Constellation Imagery Leveragin
 	3. Assign a name to your order.
 	4. Under Select assets, choose “Surface reflectance” for either 4-band or 8-band imagery.
 	5. In Tools & review, enable the following options:
-	  a) Clip items to AOI
-      b) Composite items by strip
-      c) Do NOT select the Harmonize option.
+	  a) Clip items to AOI.
+          b) Composite items by strip (if scene-based implementation is needed, skip this).
+          c) Do NOT select the Harmonize option.
    
 	The downloaded data will be packaged as a compressed file titled [order_name]_psscene_[asset_name](e.g., Beijing_20230705_psscene_analytic_8b_sr_udm2). 
 	The package will include multiple strip images (in .tif format) along with their corresponding udm files (in .tif) and metadata files (in .json). Example filenames are:
  	  "2023-07-05_strip_6625124_composite.tif"
-      "2023-07-05_strip_6625124_composite_udm2.tif"
-      "2023-07-05_strip_6625124_composite_metadata.json"
+          "2023-07-05_strip_6625124_composite_udm2.tif"
+          "2023-07-05_strip_6625124_composite_metadata.json"
 
 🔧 Parameter Setting
 
