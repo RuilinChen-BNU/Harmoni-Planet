@@ -1,5 +1,6 @@
 # Harmoni-Planet
 Harmoni-Planet: A Holistic Harmonization Method for PlanetScope Constellation Imagery Leveraging a Graph-Based Greedy Optimization Strategy
+![GitHub图像](Logo.png)
 
 🌟 Features
 
