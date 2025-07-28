@@ -104,3 +104,4 @@ Harmoni-Planet: A Holistic Harmonization Method for PlanetScope Constellation Im
 🙌 Acknowledgements
 
 	Created by Ruilin Chen. Looking forward to your feedback and suggestions! If you have any questions or encounter issues, please feel free to submit an Issue.
+ 	CESTEM is employed as the benchmark method in this study and is unrelated to Harmoni-Planet.
