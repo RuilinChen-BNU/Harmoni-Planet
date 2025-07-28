@@ -27,7 +27,7 @@ Harmoni-Planet: A Holistic Harmonization Method for PlanetScope Constellation Im
       c) Do NOT select the Harmonize option.
    
 	The downloaded data will be packaged as a compressed file titled [order_name]_psscene_[asset_name](e.g., Beijing_20230705_psscene_analytic_8b_sr_udm2). 
-	The package will include multiple strip images (in .tif format) along with their corresponding udm files (in .tif) and metadata files (in .json). Example filenames are:
+	The package will include multiple strip/scene images (in .tif format) along with their corresponding udm files (in .tif) and metadata files (in .json). Example filenames are:
  	  "2023-07-05_strip_6625124_composite.tif"
       "2023-07-05_strip_6625124_composite_udm2.tif"
       "2023-07-05_strip_6625124_composite_metadata.json"
@@ -42,14 +42,16 @@ Harmoni-Planet: A Holistic Harmonization Method for PlanetScope Constellation Im
 	5. "R2_threshold": Discard edges with RIE r^2 values below this threshold.
  	6. "clear_threshold": Exclude sample plots with a shared valid pixel proportion between strips below  "clear_threshold" (e.g., 0.5 = 50% shared valid pixels). 
 	7. "significance_threshold": Set the significance level for identifying invariant pixels using the Multivariate Alteration Detection (MAD) method.
-	8. "sample_size", "sample_interval_y", and "sample_interval_x": Define the size and density of sample plots (measured in degrees) used to identify invariant pixels for regression fitting.
- 	9. "maximum_invar_px": Specify the maximum number of invariant pixels per edge to control storage size.
+	8. "sample_size", "sample_interval_y", and "sample_interval_x": Define the size and density of sample plots (measured in degrees) used to identify invariant pixels for regression fitting. If plot size was set to zero, imagery from the entire intersection area will be used and no sample plots will be generated.
+ 	9. "minmum_invar_px": Specify the minmum number of invariant pixels per edge to ensure the edge quality.
+ 	10. "maximum_invar_px": Specify the maximum number of invariant pixels per edge to control storage size.
 	
 	Parameters for Graph Optimization:
  	1. "optfile_folder": Directory to store the generated optimization results.
 	2. "harmimg_folder": Directory to store the harmonized images.
-	3. "last_n" and "impro_ratio": Halts optimization when the average loss improvement over the "last_n" iterations is below the specified "impro_ratio".
- 	4. "Block_size": Enables processing harmonized images in a block-wise manner.
+ 	3. "harm_list"(optional): Specified images to be harmonized (Default to harmonize all images).
+	4. "last_n" and "impro_ratio": Halts optimization when the average loss improvement over the "last_n" iterations is below the specified "impro_ratio". The prefixes ‘sceneHarm’ and ‘stripHarm’ indicate the respective stages of the optimization procedure.
+ 	5. "Block_size": Enables processing harmonized images in a block-wise manner.
   
 
 
@@ -63,7 +65,7 @@ Harmoni-Planet: A Holistic Harmonization Method for PlanetScope Constellation Im
 	5. import_graph(): Load graph details (nodes, edges, attributes, and harmonization parameters) from previously saved files (Optional).
 	
 	Functions for Graph Optimization:
- 	1. optmize_graph(): Graph optimization --- Optimize the graph to calculate harmonization parameters (Harm_k and Harm_b)
+ 	1. graph_optimization(): Graph optimization --- Optimize the graph to calculate harmonization parameters (Harm_k and Harm_b)
 	2. export_harmonization_parameters(): Export harmonization parameters --- Save the harmonization parameters (k and b) for each strip to the output folder.
 	3. export_harmonized_image(): Export harmonized images --- Generate and save harmonized images for the given dataset using the optimized parameters.
 
@@ -79,16 +81,17 @@ Harmoni-Planet: A Holistic Harmonization Method for PlanetScope Constellation Im
 
 ✅ Testing
 
-	Testing data:
-	The Test_Data folder contains 37 pre-processed and downscaled PlanetScope strips, their corresponding UDM2 files, and metadata files.
+	Demo data:
+ 	Beijing: This dataset is intended for evaluating strip-based implementations and comprises 37 pre-processed and downscaled PlanetScope strips, along with their corresponding UDM2 files and metadata.
+  	Qingzang: This dataset is intended for evaluating scene-based implementations and includes 124 scenes, each accompanied by its respective UDM2 and metadata files.
  
 	Disclaimer:
-	Due to licensing restrictions, the dataset has been downscaled to 90m resolution, and metadata irrelevant to image footprints has been removed.
+	Due to licensing restrictions, the dataset has been downscaled to 90m (Beijing) and 30m (Qingzang) resolution, and metadata irrelevant to image footprints has been removed.
 	To use the testing data: 1. Set "imagefile_folder" to the Test_Data folder.
 	                         2. Configure output file paths accordingly.
 
 	Visual evaluation:
-	To visually evaluate the algorithm's performance on the test dataset, apply the following PlanetScope strip imagery with identical stretching methods:
+	To visually evaluate the algorithm's performance on the test dataset, apply the following PlanetScope strip imagery (Beijing) with identical stretching methods:
   	202306276606884.tif | 202306276606795.tif | 202306276606742.tif | 202306276606997.tif | 202306276606764.tif
 	202306296611713.tif | 202306296611316.tif | 202306296611662.tif | 202306296611282.tif | 202306296611929.tif
 	These images were acquired over a two-day period and exhibit significant radiometric inconsistencies between strips, making them suitable for visualizing the algorithm's performance.
