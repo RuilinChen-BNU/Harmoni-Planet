@@ -1084,12 +1084,12 @@ def export_harmonized_image(harmimg_folder, imagefile_folder, node_names, cluste
 '''=========================================================================================================='''
 '''************[1] Graph Construction & Initialization***************'''
 # Define the folder containing the images, organized according to the required format
-imagefile_folder = r"D:\Planet_Harmonization\Figure_code\Harmoni-Planet-main\Harmoni-Planet-main\Demo_Beijing (Strip-based)"
+imagefile_folder = r"D:\Demo_Beijing (Strip-based)"
 # Export the constructed graph files (i.e., node, edge and invariant pixels) to the designated path.
 # If a graph has already been constructed, provide the paths to the required reconstruction files.
-nodefile_path = r"D:\Planet_Harmonization\Figure_code\Harmoni-Planet-main\Harmoni-Planet-main\Beijing Harmonization\node.csv"        # Path to the node data file
-edgefile_path = r"D:\Planet_Harmonization\Figure_code\Harmoni-Planet-main\Harmoni-Planet-main\Beijing Harmonization\edge.csv"        # Path to the edge data file
-invarpx_path = r"D:\Planet_Harmonization\Figure_code\Harmoni-Planet-main\Harmoni-Planet-main\Beijing Harmonization\invar.csv"        # Path to the invariant pixel data file
+nodefile_path = r"D:\Beijing Harmonization\node.csv"        # Path to the node data file
+edgefile_path = r"D:\Beijing Harmonization\edge.csv"        # Path to the edge data file
+invarpx_path = r"D:\Beijing Harmonization\invar.csv"        # Path to the invariant pixel data file
 # Specify the selected channels to be harmonized.
 channels = ["Coastal Blue", "Blue", "Green I", "Green II", "Yellow", "Red", "Red-Edge", "NIR"] #Eight bands, for SuperDove (Beijing test data)
 #channels = ["Blue", "Green II", "Red", "NIR"] #Four bands, for Dove Classic and Dove R (Qingzang test data)
@@ -1114,9 +1114,9 @@ maximum_invar_px = 2000
 
 '''*******************[2] Graph Optimization*********************'''
 # Specify the folder to store the generated optimization results.
-optfile_folder = r"D:\Planet_Harmonization\Figure_code\Harmoni-Planet-main\Harmoni-Planet-main\Beijing Harmonization"
+optfile_folder = r"D:\Beijing Harmonization"
 # Specify the folder to store the masked harmonized images.
-harm_folder = r"D:\Planet_Harmonization\Figure_code\Harmoni-Planet-main\Harmoni-Planet-main\Beijing Harmonization\Corrected"
+harm_folder = r"D:\Beijing Harmonization\Corrected"
 # Specify the files(i.e., nodenames) to harmonize (Default to harmonize all files).
 #harm_list = ["202309116766261", "202309136770380",] #For instance
 # Stop the optimization process when the average loss over the last "last_n" iterations improves by less than "impro_ratio".
