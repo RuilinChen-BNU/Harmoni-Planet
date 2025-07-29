@@ -773,7 +773,7 @@ def graph_optimization(node_names, strip_id, node_attributes, edge_names, edge_t
                 clusters[corres_scene_ids] =  0
             else:
                 #Successful harmonization at scene level
-                clusters[corres_scene_ids][np.where(clusters[corres_scene_ids] !=  -1)] =  0
+                clusters[corres_scene_ids[clusters[corres_scene_ids] != -1]] = 0
     else:
         #Perform strip-level harmonization directly.
         Harm_k, Harm_b, edge_attributes_record, clusters = greedy_optmization(node_names, node_attributes, edge_names, edge_attributes, edge_invar_pxs, stripHarm_last_n, stripHarm_impro_ratio)
